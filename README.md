@@ -8,7 +8,7 @@ aws-layer-pypacker is a tool to create AWS Lambda Layers from Python3.7 packages
 ### x86 Based OS
 Build the docker image with
 ```bash
-docker build -t layer-packer:latest . --platform linux/amd64
+docker build -t layer-packer:latest .
 ```
 
 
