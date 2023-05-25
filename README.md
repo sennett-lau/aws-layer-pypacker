@@ -21,8 +21,9 @@ docker build -t layer-packer:latest . --platform linux/amd64
 ## Implementation
 To build a new python3.7 package layer:
 1. Create a required package text file named `{layer_name}.txt`
-2. Run the docker image with:
+2. Place the text file in `requirements` folder
+3. Run the docker image with:
 ```bash
-docker run -v $(pwd)/{layer_name}.txt:/requirements.txt -v $(pwd)/layers:/layers -e LAYER_NAME='{layer_name}' --rm layer-packer:latest
+docker run -v "$(pwd)/requirements:/requirements.txt" -v "$(pwd)/layers:/layers -e LAYER_NAME='{layer_name}'" --rm layer-packer:latest
 ```
-3. The generated zip file will be placed in `/layers` with naming of `{layer_name}.zip`
+4. The generated zip file will be placed in `/layers` with naming of `{layer_name}.zip`
